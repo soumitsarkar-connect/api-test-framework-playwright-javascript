@@ -1,0 +1,162 @@
+[
+  {
+    "description": "",
+    "elements": [
+      {
+        "description": "",
+        "id": "user-api-testing;create-a-user-and-retrieve-it-by-id",
+        "keyword": "Scenario",
+        "line": 3,
+        "name": "Create a user and retrieve it by ID",
+        "steps": [
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 9571599
+            }
+          },
+          {
+            "arguments": [
+              {
+                "content": "{\n  \"name\": \"John Doe\",\n  \"username\": \"johndoe\",\n  \"email\": \"john@example.com\"\n}",
+                "line": 5
+              }
+            ],
+            "keyword": "When ",
+            "line": 4,
+            "name": "I send a \"POST\" request to \"/users\" with body:",
+            "match": {
+              "location": "steps\\send-api-request-steps.js:9"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 74469099
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 12,
+            "name": "I store the value of \"id\" as \"createdUserId\"",
+            "match": {
+              "location": "steps\\send-api-request-steps.js:30"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 3503300
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 13,
+            "name": "I send a \"GET\" request to \"/users/{createdUserId}\"",
+            "match": {
+              "location": "steps\\send-api-request-steps.js:20"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 37714699
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 14,
+            "name": "the response status should be 200",
+            "match": {
+              "location": "steps\\validation_steps.js:9"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1846999
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 15,
+            "name": "the JSON response should have property \"username\"",
+            "match": {
+              "location": "steps\\validation_steps.js:13"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 2230800
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 16,
+            "name": "the JSON response property \"name\" should be \"John Doe\"",
+            "match": {
+              "location": "steps\\validation_steps.js:23"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 2403000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 17,
+            "name": "the JSON response property \"username\" should be \"johndoe\"",
+            "match": {
+              "location": "steps\\validation_steps.js:23"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 365099
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 18,
+            "name": "the JSON response property \"email\" should be \"john@example.com\"",
+            "match": {
+              "location": "steps\\validation_steps.js:23"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 354800
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 19,
+            "name": "the JSON response should match the schema \"user_schema\"",
+            "match": {
+              "location": "steps\\validation_steps.js:75"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 43751800
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 9997200
+            }
+          }
+        ],
+        "tags": [],
+        "type": "scenario"
+      }
+    ],
+    "id": "user-api-testing",
+    "line": 1,
+    "keyword": "Feature",
+    "name": "User API Testing",
+    "tags": [],
+    "uri": "features\\user_api.feature"
+  }
+]
